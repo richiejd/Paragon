@@ -1,0 +1,13 @@
+source 'https://github.com/CocoaPods/Specs.git'
+use_frameworks!
+
+target 'Paragon_Example', :exclusive => true do
+  pod "Paragon", :path => "../"
+end
+
+target 'Paragon_Tests', :exclusive => true do
+  pod "Paragon", :path => "../"
+
+  pod 'Specta'
+  pod 'Expecta'
+end
