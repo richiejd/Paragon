@@ -1,0 +1,6 @@
+framework module Paragon {
+  umbrella header "Pods-Paragon_Tests-Paragon-umbrella.h"
+
+  export *
+  module * { export * }
+}
