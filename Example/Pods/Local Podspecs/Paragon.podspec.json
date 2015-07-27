@@ -3,13 +3,13 @@
   "version": "0.1.0",
   "summary": "A short description of Paragon.",
   "description": "                       An optional longer description of Paragon\n\n                       * Markdown format.\n                       * Don't worry about the indent, we strip it!\n",
-  "homepage": "https://github.com/<GITHUB_USERNAME>/Paragon",
+  "homepage": "https://github.com/Javier27/Paragon",
   "license": "MIT",
   "authors": {
-    "Richie": "rjd232@cornell.edu"
+    "Richie": "richiejdavis27@gmail.com"
   },
   "source": {
-    "git": "https://github.com/<GITHUB_USERNAME>/Paragon.git",
+    "git": "https://github.com/Javier27/Paragon.git",
     "tag": "0.1.0"
   },
   "platforms": {
@@ -20,6 +20,11 @@
   "resource_bundles": {
     "Paragon": [
       "Pod/Assets/*.png"
+    ]
+  },
+  "dependencies": {
+    "AFNetworking": [
+      "~> 2.3"
     ]
   }
 }
