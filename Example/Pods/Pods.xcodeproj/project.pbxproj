@@ -233,6 +233,10 @@
 		F231D61AB16A2EDF30F4F23E /* EXPMatchers+beginWith.h in Headers */ = {isa = PBXBuildFile; fileRef = AD034CE5FECACEB502D2A0A9 /* EXPMatchers+beginWith.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F3815FFBCCABD9D569596761 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCFDDCB7DD699FD1F938EF7 /* AFHTTPRequestOperationManager.m */; };
 		F388AE7BDF1DCF1CD1B1B691 /* UIAlertView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = A1589EE02CC36CC67EBE9A7D /* UIAlertView+AFNetworking.m */; };
+		F3C3BC361B66A47A00DEDA53 /* NSDictionary+PG.h in Headers */ = {isa = PBXBuildFile; fileRef = F3C3BC341B66A47A00DEDA53 /* NSDictionary+PG.h */; };
+		F3C3BC371B66A47A00DEDA53 /* NSDictionary+PG.m in Sources */ = {isa = PBXBuildFile; fileRef = F3C3BC351B66A47A00DEDA53 /* NSDictionary+PG.m */; };
+		F3C3BC3A1B66A48800DEDA53 /* NSString+PG.h in Headers */ = {isa = PBXBuildFile; fileRef = F3C3BC381B66A48800DEDA53 /* NSString+PG.h */; };
+		F3C3BC3B1B66A48800DEDA53 /* NSString+PG.m in Sources */ = {isa = PBXBuildFile; fileRef = F3C3BC391B66A48800DEDA53 /* NSString+PG.m */; };
 		F4184B6E61942D55D5686EA6 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3FF09469293F64FF4F57A4F /* XCTest.framework */; };
 		F47E124C9536E4AC660756C3 /* UIButton+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = D0BB1CD8231ABE58EC728733 /* UIButton+AFNetworking.m */; };
 		F760EF46BAE3A7354249E3C3 /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 274B956C2A6A32541B7187D4 /* UIProgressView+AFNetworking.m */; };
@@ -537,6 +541,10 @@
 		F1799B6EC494BA2ACBC01A3B /* PGEndpointRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = PGEndpointRequest.m; sourceTree = "<group>"; };
 		F1D8F03B7D1BC8C9EA96967C /* Pods-Paragon_Tests-Specta.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Paragon_Tests-Specta.xcconfig"; sourceTree = "<group>"; };
 		F28A8327D95C6E3122A12FCA /* Pods-Paragon_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Paragon_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		F3C3BC341B66A47A00DEDA53 /* NSDictionary+PG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+PG.h"; sourceTree = "<group>"; };
+		F3C3BC351B66A47A00DEDA53 /* NSDictionary+PG.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+PG.m"; sourceTree = "<group>"; };
+		F3C3BC381B66A48800DEDA53 /* NSString+PG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+PG.h"; sourceTree = "<group>"; };
+		F3C3BC391B66A48800DEDA53 /* NSString+PG.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+PG.m"; sourceTree = "<group>"; };
 		F44A5F944582986E6150A819 /* EXPExpect.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EXPExpect.m; path = Expecta/EXPExpect.m; sourceTree = "<group>"; };
 		F4BCDD9E5AE1FFA03D6E46C5 /* Pods-Paragon_Example-AFNetworking-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Paragon_Example-AFNetworking-umbrella.h"; sourceTree = "<group>"; };
 		F56664DBF2CB283B115EA526 /* UIRefreshControl+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIRefreshControl+AFNetworking.m"; path = "UIKit+AFNetworking/UIRefreshControl+AFNetworking.m"; sourceTree = "<group>"; };
@@ -679,10 +687,11 @@
 		35AD4B74F03021D5CC8367BE /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				AFCA2864C2D8035ACBB77A23 /* PGUtils.h */,
-				B917444EAC49895158F1963E /* PGUtils.m */,
+				F3C3BC331B66A46700DEDA53 /* Categories */,
 				FA10BAF72166AA444F3D7C49 /* Mapping */,
 				337CFB409A734AD6D7269E67 /* Networking */,
+				AFCA2864C2D8035ACBB77A23 /* PGUtils.h */,
+				B917444EAC49895158F1963E /* PGUtils.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -1034,6 +1043,18 @@
 			name = NSURLConnection;
 			sourceTree = "<group>";
 		};
+		F3C3BC331B66A46700DEDA53 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				F3C3BC341B66A47A00DEDA53 /* NSDictionary+PG.h */,
+				F3C3BC351B66A47A00DEDA53 /* NSDictionary+PG.m */,
+				F3C3BC381B66A48800DEDA53 /* NSString+PG.h */,
+				F3C3BC391B66A48800DEDA53 /* NSString+PG.m */,
+			);
+			name = Categories;
+			path = ../../../../../Virtuoso/virtuoso_mobile/iOS/Virtuoso/Virtuoso/Virtuoso/ViewControllers/Categories;
+			sourceTree = "<group>";
+		};
 		FA10BAF72166AA444F3D7C49 /* Mapping */ = {
 			isa = PBXGroup;
 			children = (
@@ -1189,6 +1210,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3C3BC361B66A47A00DEDA53 /* NSDictionary+PG.h in Headers */,
+				F3C3BC3A1B66A48800DEDA53 /* NSString+PG.h in Headers */,
 				46784BC34CF00002EF71A580 /* Pods-Paragon_Example-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1615,6 +1638,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3EF047CC73C868AC7BE5B992 /* Pods-Paragon_Example-dummy.m in Sources */,
+				F3C3BC3B1B66A48800DEDA53 /* NSString+PG.m in Sources */,
+				F3C3BC371B66A47A00DEDA53 /* NSDictionary+PG.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
