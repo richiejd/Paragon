@@ -225,8 +225,17 @@ have a client as well. Here is an example implementation of an APIClient at a ba
                         completion:completion];
 }
 
+- (NSDictionary *)headersForRequest:(PGEndpointRequest *)request
+{
+  // custom handle headers for each request, then if you want to use
+  // the default headers in your networking manager, use
+  [super headersForRequest:request];
+}
+
 @end
 ```
+
+#### Networking Manager
 
 Then you need to setup your networking manager, an example of how to do this would be  
 to create a request manager such as the following:
