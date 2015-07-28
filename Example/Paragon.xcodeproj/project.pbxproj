@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1352AC7F1B67022900213A7B /* PGExampleAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 1352AC7E1B67022900213A7B /* PGExampleAPIClient.m */; };
+		1352AC821B67027900213A7B /* PGRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1352AC811B67027900213A7B /* PGRequestManager.m */; };
 		1372473F3FAC864ED13BFFEB /* Pods_Paragon_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA8AF6D072CA9DDB0AE45318 /* Pods_Paragon_Tests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
@@ -36,6 +38,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1352AC7D1B67022900213A7B /* PGExampleAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGExampleAPIClient.h; sourceTree = "<group>"; };
+		1352AC7E1B67022900213A7B /* PGExampleAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGExampleAPIClient.m; sourceTree = "<group>"; };
+		1352AC801B67027900213A7B /* PGRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGRequestManager.h; sourceTree = "<group>"; };
+		1352AC811B67027900213A7B /* PGRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGRequestManager.m; sourceTree = "<group>"; };
 		1FF5AF2AEF5A71F78B01510F /* Pods-Paragon_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Paragon_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Paragon_Example/Pods-Paragon_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		248577BD4C53FD1D386912CF /* Pods_Paragon_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Paragon_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		33028322BF07636CFF263774 /* Pods-Paragon_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Paragon_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Paragon_Example/Pods-Paragon_Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -143,9 +149,13 @@
 			children = (
 				6003F59C195388D20070C39A /* PGAppDelegate.h */,
 				6003F59D195388D20070C39A /* PGAppDelegate.m */,
-				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
+				1352AC7D1B67022900213A7B /* PGExampleAPIClient.h */,
+				1352AC7E1B67022900213A7B /* PGExampleAPIClient.m */,
+				1352AC801B67027900213A7B /* PGRequestManager.h */,
+				1352AC811B67027900213A7B /* PGRequestManager.m */,
 				6003F5A5195388D20070C39A /* PGViewController.h */,
 				6003F5A6195388D20070C39A /* PGViewController.m */,
+				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
 			);
@@ -390,9 +400,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1352AC821B67027900213A7B /* PGRequestManager.m in Sources */,
 				6003F59E195388D20070C39A /* PGAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* PGViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				1352AC7F1B67022900213A7B /* PGExampleAPIClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
