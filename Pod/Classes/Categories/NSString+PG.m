@@ -12,7 +12,7 @@
 
 - (BOOL)hasSubstring:(NSString *)substring
 {
-  return [self rangeOfString:substring].location == NSNotFound;
+  return [self rangeOfString:substring].location != NSNotFound;
 }
 
 + (NSString *)stringByAppendingParams:(NSDictionary *)params toUrl:(NSURL *)url
