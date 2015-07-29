@@ -8,6 +8,7 @@
 
 #import "PGNetworkingManager.h"
 #import "PGEndpointRequest.h"
+#import "PGUtils.h"
 
 @interface PGNetworkingManager ()
 

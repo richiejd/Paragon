@@ -10,9 +10,9 @@
 Pod::Spec.new do |s|
   s.name             = "Paragon"
   s.version          = "0.1.0"
-  s.summary          = "A short description of Paragon."
+  s.summary          = "Paragon provides model mapping and a networking layer."
   s.description      = <<-DESC
-                       An optional longer description of Paragon
+Paragon have two primary components currently: a series of mapping classes and networking classes. The mapping classes allow you to easily map model classes to and from dictionaries (and therefore json). The networing classes provide an easy mechanism for setting up endpoints that you can easily use in your application. By design you will set the networking manager to have default settings for your network requests but each endpoint can be uniquely defined and then used in your api client which should be the primary class your view controllers and otehr network-interacting components talk to.
 
                        * Markdown format.
                        * Don't worry about the indent, we strip it!

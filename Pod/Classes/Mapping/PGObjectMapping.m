@@ -43,8 +43,8 @@
   NSString *error = [NSString stringWithFormat:@"Your property mappings must be strings, this is violated for class %s", class_getName(self.mappingClass)];
   for (id key in propertyMappings) {
     id val = propertyMappings[key];
-    NSAssert([key isKindOfClass:[NSString class]], error);
-    NSAssert([val isKindOfClass:[NSString class]], error);
+    [PGUtils assert:[key isKindOfClass:[NSString class]] message:error];
+    [PGUtils assert:[val isKindOfClass:[NSString class]] message:error];
     newMappings[key] = val;
   }
 
@@ -59,9 +59,10 @@
   NSString *valueError = [NSString stringWithFormat:@"Your transforms must be in the set of enum, this is violated for transforms in class %s", class_getName(self.mappingClass)];
   for (id key in transforms) {
     NSNumber *val = transforms[key];
-    NSAssert([key isKindOfClass:[NSString class]], classError);
-    NSAssert([val isKindOfClass:[NSNumber class]], classError);
-    NSAssert(val.intValue >= 0 && val.intValue < PGTransformResultTypeMAX, valueError);
+    [PGUtils assert:[key isKindOfClass:[NSString class]] message:classError];
+    [PGUtils assert:[val isKindOfClass:[NSNumber class]] message:classError];
+    [PGUtils assert:val.intValue >= 0 && val.intValue < PGTransformResultTypeMAX
+            message:valueError];
     newTransforms[key] = val;
   }
 
@@ -73,7 +74,7 @@
 {
   NSString *error = [NSString stringWithFormat:@"Your relationship mappings must be PGRelationshipMapping objects, this is violated for class %s", class_getName(self.mappingClass)];
   for (id mapping in relationshipMappings) {
-    NSAssert([mapping isKindOfClass:[PGRelationshipMapping class]], error);
+    [PGUtils assert:[mapping isKindOfClass:[PGRelationshipMapping class]] message:error];
   }
   self.relationshipMappings = [relationshipMappings arrayByAddingObjectsFromArray:self.relationshipMappings];
 }
@@ -115,10 +116,10 @@
         propertyObject = [PGValueTransformer transformValue:propertyObject toClass:propertyClass];
         BOOL classMatch = [propertyObject isKindOfClass:propertyClass];
         NSString *error = [NSString stringWithFormat:@"mapping for %s on the key %@ failed due to a type mismatch", class_getName(self.mappingClass), self.baseMappings[key]];
-        NSAssert(classMatch, error);
+        [PGUtils assert:classMatch message:error];
         BOOL objectHasClass = [(id)result respondsToSelector:NSSelectorFromString(self.baseMappings[key])];
         error = [NSString stringWithFormat:@"mapping for %s failed due to missing property %@", class_getName(self.mappingClass), self.baseMappings[key]];
-        NSAssert(objectHasClass, error);
+        [PGUtils assert:objectHasClass message:error];
       }
     }
 
@@ -158,10 +159,10 @@
       Class propertyClass = [PGUtils classOfPropertyNamed:mapping.propertyName class:self.mappingClass];
       BOOL classMatch = [propertyObject isKindOfClass:propertyClass];
       NSString *error = [NSString stringWithFormat:@"mapping for %s on the key %@ failed due to a type mismatch", class_getName(self.mappingClass), mapping.propertyName];
-      NSAssert(classMatch, error);
+      [PGUtils assert:classMatch message:error];
       BOOL objectHasClass = [(id)result respondsToSelector:NSSelectorFromString(mapping.propertyName)];
       error = [NSString stringWithFormat:@"mapping for %s failed due to missing property %@", class_getName(self.mappingClass), mapping.propertyName];
-      NSAssert(objectHasClass, error);
+      [PGUtils assert:objectHasClass message:error];
     }
     [result setValue:propertyObject forKey:mapping.propertyName];
   }
@@ -178,7 +179,7 @@
   // start with base mapping
   for (NSString *key in self.baseMappings) {
     NSString *error = [NSString stringWithFormat:@"mapping for %s failed, this class has no property %@", class_getName(self.mappingClass), self.baseMappings[key]];
-    NSAssert([object respondsToSelector:NSSelectorFromString(self.baseMappings[key])], error);
+    [PGUtils assert:[object respondsToSelector:NSSelectorFromString(self.baseMappings[key])] message:error];
 
     id propertyObject = [object propertyForKey:self.baseMappings[key]];
     propertyObject = propertyObject ? propertyObject : [NSNull null];
@@ -195,7 +196,7 @@
   // now handle relationship mappings
   for (PGRelationshipMapping *mapping in self.relationshipMappings) {
     NSString *error = [NSString stringWithFormat:@"mapping for %s failed, this class has no property %@", class_getName(self.mappingClass), mapping.propertyName];
-    NSAssert([object respondsToSelector:NSSelectorFromString(mapping.propertyName)], error);
+    [PGUtils assert:[object respondsToSelector:NSSelectorFromString(mapping.propertyName)] message:error];
 
     id propertyObject = [object propertyForKey:mapping.propertyName];
     propertyObject = propertyObject ? propertyObject : [NSNull null];

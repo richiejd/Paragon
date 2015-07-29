@@ -21,10 +21,16 @@
   if (splitPropertyAttributes.count > 0) {
     NSArray *splitEncodeType = [splitPropertyAttributes[0] componentsSeparatedByString:@"\""];
     NSString *error = [NSString stringWithFormat:@"Error trying to map property %@ for class %s, the property %@ does not appear to be of type NSObject, please consider using a transformer if it is a supported PGTransformResultType, otherwise your type is not currently supported.", propertyName, class_getName(class), propertyName];
-    NSAssert(splitEncodeType.count > 1, error);
+    [self assert:splitEncodeType.count > 1
+         message:error];
     propertyClass = NSClassFromString(splitEncodeType[1]);
   }
   return propertyClass;
+}
+
++ (void)assert:(BOOL)assertion message:(NSString *)message
+{
+  NSAssert(assertion, message);
 }
 
 @end

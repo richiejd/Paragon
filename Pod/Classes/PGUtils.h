@@ -11,5 +11,6 @@
 @interface PGUtils : NSObject
 
 + (Class)classOfPropertyNamed:(NSString *)propertyName class:(Class)class;
++ (void)assert:(BOOL)assertion message:(NSString *)message;
 
 @end

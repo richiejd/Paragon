@@ -10,6 +10,7 @@
 #import "PGNetworkingManager.h"
 #import "PGObjectMapping.h"
 #import "PGMappableObject.h"
+#import "PGUtils.h"
 
 @interface PGEndpointRequest ()
 
@@ -51,21 +52,21 @@
                          [self stringFromEnum:self.requestType],
                          url.absoluteString,
                          NSStringFromClass(bodyClass)];
-      NSAssert([bodyClass conformsToProtocol:@protocol(PGMappableObject)], error);
+      [PGUtils assert:[bodyClass conformsToProtocol:@protocol(PGMappableObject)] message:error];
     }
     if (responseClass) {
       NSString *error = [NSString stringWithFormat:@"%@ request to %@ does not have a valid obbject mapping for class %@",
                          [self stringFromEnum:self.requestType],
                          url.absoluteString,
                          NSStringFromClass(responseClass)];
-      NSAssert([responseClass conformsToProtocol:@protocol(PGMappableObject)], error);
+      [PGUtils assert:[responseClass conformsToProtocol:@protocol(PGMappableObject)] message:error];
     }
     if (errorClass) {
       NSString *error = [NSString stringWithFormat:@"%@ request to %@ does not have a valid obbject mapping for class %@",
                          [self stringFromEnum:self.requestType],
                          url.absoluteString,
                          NSStringFromClass(errorClass)];
-      NSAssert([errorClass conformsToProtocol:@protocol(PGMappableObject)], error);
+      [PGUtils assert:[errorClass conformsToProtocol:@protocol(PGMappableObject)] message:error];
     }
   }
 
