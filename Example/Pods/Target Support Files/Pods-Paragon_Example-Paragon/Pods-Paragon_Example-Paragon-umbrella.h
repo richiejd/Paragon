@@ -1,5 +1,7 @@
 #import <UIKit/UIKit.h>
 
+#import "NSDictionary+PG.h"
+#import "NSString+PG.h"
 #import "PGMappableObject.h"
 #import "PGObjectMapping.h"
 #import "PGRelationshipMapping.h"
